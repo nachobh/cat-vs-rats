@@ -1,0 +1,11 @@
+<p id=s>
+    <script>
+        r=Math.random;
+        d=__=>s.style=`width:3%;background:red;margin:${40*r()}%${60*r()}%`;
+        c=0;
+        t=30;
+        d();
+        setInterval(___=>{t--;i(c);t<0&&(s.onclick=0)},999);
+        i=c=>s.innerText=c+`\n\n${t}s`;
+        s.onclick=__=>i(++c)&d()
+    </script>
