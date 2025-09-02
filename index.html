@@ -1,13 +1,21 @@
 <!--This script is based in a Win+R command I wrote with some
-    team members while doing some team building/coding activities
+    team members while doing some team building/coding activities:
+
+    cmd /K echo "<p id=s><script>r=Math.random;d=__=>s.style=
+    `width:3%;background:red;margin:${40*r()}%${60*r()}%`;c=0;
+    t=30;d();setInterval(___=>{t--;i(c);t<0&&(s.onclick=0)},999);
+    i=c=>s.innerText=c+`\n\n${t}s`;s.onclick=__=>i(++c)&d()</script>
+    ">g.htm&start g.htm
+
     The only html element is the paragraph with id s. The rest of
     the code is javascript:
-        - First of all you got the function d to set the style of the
+        - First of all, there is the declaration of r as Math.random.
+        - Secondly, you got the function d to set the style of the
         paragraph, as it can make it travel through the screen with
-        the margin style element.
-        - Secondly, you got the declaration of c as the counter of
+        just this margin style element and its definition by %.
+        - Thirdly, you got the declaration of c as the counter of
         clicks (rats for this version)
-        - Thirdly, there is t, the countdown of the seconds left.
+        - Later, there is t, the countdown of the seconds left.
         - Then you call to the d() function to start the game.
         - After that, in an interval of 999ms (shorter than 1000ms)
         it starts subtracting seconds to the variable t (while
@@ -17,8 +25,17 @@
         track the variables in the game
         - And finally, the definition of the  onclick function for
          the paragraph, that calls to the function i with parameter
-         ++c and also the call to d() to randomly place the paragraph
-         s
+         ++c and also the call to d() (using &) to randomly place the
+         paragraph s
+
+
+    Game mechanics:
+        - A rectangle (3% width) appears randomly on screen
+        - Click it to catch a rat and increase your score
+        - After each click, the rectangle moves to a new random
+        position and also your score is increased
+        - You have 30 seconds to catch as many rats as possible
+
     Hope you like it!
 -->
 <p id=s>
