@@ -1,11 +1,34 @@
+<!--This script is based in a Win+R command I wrote with some
+    team members while doing some team building/coding activities
+    The only html element is the paragraph with id s. The rest of
+    the code is javascript:
+        - First of all you got the function d to set the style of the
+        paragraph, as it can make it travel through the screen with
+        the margin style element.
+        - Secondly, you got the declaration of c as the counter of
+        clicks (rats for this version)
+        - Thirdly, there is t, the countdown of the seconds left.
+        - Then you call to the d() function to start the game.
+        - After that, in an interval of 999ms (shorter than 1000ms)
+        it starts subtracting seconds to the variable t (while
+        also disabling s.onclick when reaching 0)
+        - Therefore, it goes with the declaration of function i with
+        the parameter c, setting the innerText of the paragraph to
+        track the variables in the game
+        - And finally, the definition of the  onclick function for
+         the paragraph, that calls to the function i with parameter
+         ++c and also the call to d() to randomly place the paragraph
+         s
+    Hope you like it!
+-->
 <p id=s>
     <script>
         r=Math.random;
-        d=__=>s.style=`width:3%;background:red;margin:${40*r()}%${60*r()}%`;
+        d=__=>s.style=`width:3%;background:#FFAAAA;margin:${40*r()}%${60*r()}%`;
         c=0;
         t=30;
         d();
         setInterval(___=>{t--;i(c);t<0&&(s.onclick=0)},999);
-        i=c=>s.innerText=c+`\n\n${t}s`;
+        i=c=>s.innerText=c+`\n🐀\n${t}s`;
         s.onclick=__=>i(++c)&d()
     </script>
